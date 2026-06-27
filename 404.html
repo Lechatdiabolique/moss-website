@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><meta name="theme-color" content="#1A1C20">
+<title>404 &middot; MOSS Computing</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+@font-face{font-family:'Archivo';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-800-latin.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/Inter-400-latin.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/Inter-600-latin.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/JetBrainsMono-500-latin.woff2) format('woff2')}
+:root{--bg:#1A1C20;--bg-card:#1E2126;--bg-inset:#16181B;--line:#2E3138;--line-strong:#3A3D42;--text:#FFFFFF;--dim:#B8BBBE;--muted:#808488;--faint:#505458;--sage:#A8C090;--sage-mid:rgba(168,192,144,.24);--accent:var(--sage);--display:'Archivo',system-ui,sans-serif;--sans:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;text-align:center;padding:0 24px}
+.err{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.err .dot{display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--accent);margin-right:8px;vertical-align:middle}
+h1{font-family:var(--display);font-weight:800;font-stretch:125%;font-size:clamp(3rem,8vw,5rem);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+h1 .s{color:var(--accent)}
+p{color:var(--dim);font-size:1.1rem;line-height:1.55;margin-bottom:32px}
+.links{display:flex;flex-direction:column;gap:10px;align-items:center}
+.links a{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--accent);text-decoration:none;border:1px solid var(--line);padding:12px 24px;border-radius:3px;transition:border-color .15s,color .15s;min-width:200px}
+.links a:hover{border-color:var(--sage-mid);color:var(--text)}
+.links a .arr{transition:transform .15s}
+.links a:hover .arr{transform:translateX(4px)}
+.fine{margin-top:40px;font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.04em}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="err"><span class="dot"></span>Error 404 &middot; Not governed</div>
+  <h1>This page <span class="s">wasn't cleared.</span></h1>
+  <p>The page you're looking for doesn't exist, or has been revoked. Like an agent without a MOSS Passport, it can't run.</p>
+  <div class="links">
+    <a href="/">Back to home <span class="arr">&rarr;</span></a>
+    <a href="platform.html">See the platform</a>
+    <a href="docs.html">Read the docs</a>
+  </div>
+  <div class="fine">ML-DSA-44 &middot; FIPS 204 &middot; Deploy AI without fear</div>
+</div>
+</body></html>

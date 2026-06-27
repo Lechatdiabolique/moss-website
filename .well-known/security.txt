@@ -1,0 +1,4 @@
+Contact: mailto:security@mosscomputing.com
+Expires: 2027-06-27T00:00:00Z
+Preferred-Languages: en
+Canonical: https://mosscomputing.com/.well-known/security.txt
