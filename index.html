@@ -337,30 +337,6 @@ section.sec.alt{background:var(--bg-inset)}
 .clr-sig .row .vv{color:var(--muted)}.clr-sig .row .vv.alg{color:var(--sage)}
 .clr-cap{margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--faint);line-height:1.6;max-width:30em}
 
-/* ---- lifecycle tower (tapered isometric, cube-grid) ---- */
-.life-head{max-width:46em;margin:0 auto clamp(34px,5vw,52px);text-align:center}
-.life-head h1{margin-top:22px;font-size:clamp(2.6rem,6vw,4.4rem)}
-.life-head h1 .s{color:var(--sage)}
-.life-head h2{margin-top:20px;font-size:clamp(2rem,4.4vw,3.1rem)}.life-head h2 .s{color:var(--sage)}
-.life-head .sd{margin-top:18px;color:var(--dim);font-size:1.08rem;max-width:36em;margin-inline:auto}
-.tower{max-width:980px;margin:0 auto;padding-top:24px;position:relative}
-.lrow{display:grid;grid-template-columns:1fr 470px 1fr;align-items:center;min-height:calc(var(--h) + 54px);position:relative;z-index:1}
-.lrow .info,.lrow .iso{grid-row:1}
-.iso{grid-column:2;justify-self:center;position:relative;width:calc(var(--w) + 38px);height:calc(var(--h) + 38px);filter:drop-shadow(0 16px 12px rgba(0,0,0,.5))}
-.iso .fr{position:absolute;left:0;top:38px;width:var(--w);height:var(--h);background-color:var(--f);background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.10) 0 1px,transparent 1px 23px),repeating-linear-gradient(90deg,rgba(0,0,0,.10) 0 1px,transparent 1px 23px),linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0) 45%);z-index:2}
-.iso .tp{position:absolute;left:0;top:0;width:var(--w);height:38px;background-color:var(--t);background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 23px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 1px,transparent 1px 23px);transform:skewX(-45deg);transform-origin:bottom left}
-.iso .sd2{position:absolute;left:var(--w);top:38px;width:38px;height:var(--h);background-color:var(--s);background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 23px),repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 1px,transparent 1px 23px);transform:skewY(-45deg);transform-origin:top left}
-.lrow:nth-child(odd) .iso::before{content:"";position:absolute;top:calc(38px + var(--h)/2);right:100%;width:56px;height:1px;background:var(--f);opacity:.5}
-.lrow:nth-child(even) .iso::after{content:"";position:absolute;top:calc(38px + var(--h)/2);left:calc(100% - 38px);width:94px;height:1px;background:var(--f);opacity:.5}
-.info{align-self:center;max-width:20em;position:relative}
-.lrow:nth-child(odd) .info{grid-column:1;text-align:right;justify-self:end;padding-right:66px}
-.lrow:nth-child(even) .info{grid-column:3;text-align:left;justify-self:start;padding-left:66px}
-.info .vtag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;color:#15170E;background:var(--f);padding:4px 10px;margin-bottom:12px;letter-spacing:.02em}
-.info .iname{font-family:var(--display);font-weight:800;font-stretch:118%;font-size:1.55rem;line-height:1;margin-bottom:9px;color:#fff}
-.info .idesc{color:var(--dim);font-size:.96rem;line-height:1.32;margin-bottom:10px}
-.info .sat{font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--f);display:inline-flex;gap:8px;align-items:center}
-.lrow:nth-child(odd) .info .sat{flex-direction:row-reverse}
-
 /* ---- MGI score gauge ---- */
 .mgi-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(34px,5vw,64px);align-items:center}
 .mgi-grid h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-top:20px}.mgi-grid h2 .s{color:var(--sage)}
@@ -542,16 +518,6 @@ footer{border-top:1px solid var(--line);padding:clamp(48px,6vw,68px) 0 38px;back
   .ptable{grid-template-columns:1fr 1fr}
   .cardgrid,.steps{grid-template-columns:1fr 1fr}
   .foot-top{grid-template-columns:1fr 1fr 1fr;gap:26px}
-}
-@media (max-width:980px){
-  .lrow{grid-template-columns:1fr;min-height:0!important;align-items:stretch;margin-bottom:24px}
-  .lrow .info,.lrow .iso{grid-row:auto}
-  .info,.lrow:nth-child(odd) .info,.lrow:nth-child(even) .info{grid-column:1;text-align:left;justify-self:start;align-self:auto;padding:0;max-width:none;order:1;margin-bottom:12px}
-  .lrow:nth-child(odd) .iso::before,.lrow:nth-child(even) .iso::after{display:none}
-  .lrow:nth-child(odd) .info .sat{flex-direction:row}
-  .iso{grid-column:1;order:2;width:100%!important;height:62px!important;justify-self:stretch;filter:none}
-  .iso .tp,.iso .sd2{display:none}
-  .iso .fr{position:static;width:100%;height:62px}
 }
 @media (max-width:980px){.mgi-grid{grid-template-columns:1fr;gap:28px}}
 @media (max-width:840px){
@@ -763,10 +729,6 @@ body.theme-pqc .qtl-qday span{color:#fff}
 .hero-art{display:flex;justify-content:center;width:100%}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero-art{order:2}}
 
-/* ---- tower build-in animation ---- */
-.tower.armed .lrow{opacity:0;transform:translateY(16px)}
-.tower.armed .lrow.built{opacity:1;transform:none;transition:opacity .55s ease,transform .55s ease}
-
 /* ---- PQC flagship: lattice widget ---- */
 .lattice{max-width:520px;margin:0 auto}
 .latwrap{border:1px solid var(--line);border-radius:14px;background:var(--bg-inset);padding:8px}
@@ -968,7 +930,6 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
   <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobnav">MENU</button>
 </div><nav class="mobnav" id="mobnav"><a href="platform.html">Products</a><a class="mob-sub" href="console.html">Console</a><a class="mob-sub" href="trust.html">Trust</a><a class="mob-sub" href="pqc.html">PQC Migration</a><a href="solutions.html">Solutions</a><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a><a href="about.html">Company</a><a href="https://app.mosscomputing.com">Sign in</a></nav></header>
 <style>
-.tower-panel{background:var(--bg-card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(44px,6vw,76px) 0}
 .proofbar{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
 .proofbar span{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);padding:7px 12px;letter-spacing:.02em}
 .proofbar span b{color:var(--sage);font-weight:600}
@@ -983,13 +944,13 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
   <div class="hero-copy">
     <div class="eyebrow"><span class="n">MOSS</span> GOVERNANCE INFRASTRUCTURE FOR AI</div>
     <h1 class="disp">Deploy AI <span class="s">without fear.</span></h1>
-    <p class="sd">Your AI is running. Who's watching it? MOSS governs every agent action in real-time, signs it with post-quantum cryptography, and stops rogue agents instantly. Not paperwork. Infrastructure.</p>
+    <p class="sd">Govern every agent action in real-time. Sign it with post-quantum cryptography. Stop rogue agents instantly. Not paperwork. Infrastructure.</p>
     <div class="hero-cta"><a class="btn btn-sage" href="https://calendar.app.google/rHYPhPTrmhq6hEqA6">Book a demo <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="calculator.html">Calculate your exposure</a></div>
-    <div class="proofbar"><span><b>FIPS 204</b> ML-DSA-44</span><span>Real-time agent governance</span><span>Instant kill switch</span><span>Zero-knowledge compliance proofs</span><span>Cross-org trust network</span><span>Built for <b>EU AI Act</b></span><span>Built for <b>NIST AI RMF</b></span></div>
+    <div class="proofbar"><span><b>FIPS 204</b> ML-DSA-44</span><span>Every action signed</span><span>Instant kill switch</span><span>Cross-platform governance</span></div>
   </div>
   <div class="hero-art"><div class="clr" id="clr">
   <div class="clr-head"><span>Deployment Clearance</span><span class="live"><i></i> Live</span></div>
-  <div class="clr-meta"><div><span class="k">Agent</span><span class="v">credit-decision-prod</span></div><div><span class="k">Target</span><span class="v">production &middot; 4 platforms</span></div></div>
+  <div class="clr-meta"><div><span class="k">Agent</span><span class="v">loan-underwriter-v2</span></div><div><span class="k">Target</span><span class="v">production &middot; 4 platforms</span></div></div>
   <div class="clr-checks">
     <div class="cond" data-c="pqc"><span class="tick pqc"></span><span class="lbl">Quantum-safe cryptography</span><span class="stat">evaluating</span></div>
     <div class="cond" data-c="trust"><span class="tick trust"></span><span class="lbl">Independent verification</span><span class="stat">evaluating</span></div>
@@ -1000,37 +961,11 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 </div></div>
 </div></section>
 
-<section class="tower-panel"><div class="wrap">
-  <div class="eyebrow center" style="justify-content:center;margin-bottom:clamp(34px,5vw,52px)"><span class="n">THE RUNTIME LIFECYCLE</span> one cleared agent, every safeguard mapped to a duty</div>
-  <div class="tower">
-    <div class="lrow" style="--f:#A8C090;--t:#BCD3A6;--s:#88A56F;--w:392px;--h:88px">
-      <div class="info"><span class="vtag">2,847 / day</span><h3 class="iname">RUN</h3><p class="idesc">It runs, and signs every action</p><div class="sat"><span class="seal" style="background:#A8C090"></span>Satisfies EU AI Act &middot; Art. 12 &middot; Record-keeping</div></div>
-      <div class="iso"><div class="tp"></div><div class="sd2"></div><div class="fr"></div></div>
-    </div>
-    <div class="lrow" style="--f:#C6BE82;--t:#D8D199;--s:#A39A64;--w:340px;--h:66px">
-      <div class="info"><span class="vtag">0ms exposure</span><h3 class="iname">BLOCK</h3><p class="idesc">It tries something it shouldn't. Blocked.</p><div class="sat"><span class="seal" style="background:#C6BE82"></span>Satisfies DORA &middot; ICT risk &middot; Preventive controls</div></div>
-      <div class="iso"><div class="tp"></div><div class="sd2"></div><div class="fr"></div></div>
-    </div>
-    <div class="lrow" style="--f:#D4A85A;--t:#E4BE76;--s:#AC8744;--w:300px;--h:60px">
-      <div class="info"><span class="vtag">human-in-the-loop</span><h3 class="iname">ESCALATE</h3><p class="idesc">The gray-zone call goes to a human</p><div class="sat"><span class="seal" style="background:#D4A85A"></span>Satisfies EU AI Act &middot; Art. 14 &middot; Human oversight</div></div>
-      <div class="iso"><div class="tp"></div><div class="sd2"></div><div class="fr"></div></div>
-    </div>
-    <div class="lrow" style="--f:#D9885A;--t:#E8A179;--s:#B16B42;--w:272px;--h:54px">
-      <div class="info"><span class="vtag">7 anomaly types</span><h3 class="iname">DETECT</h3><p class="idesc">It starts to drift. MOSS sees it first.</p><div class="sat"><span class="seal" style="background:#D9885A"></span>Satisfies NIST AI RMF &middot; Measure &middot; Monitoring</div></div>
-      <div class="iso"><div class="tp"></div><div class="sd2"></div><div class="fr"></div></div>
-    </div>
-    <div class="lrow" style="--f:#E05252;--t:#EC7672;--s:#B23F3F;--w:252px;--h:52px">
-      <div class="info"><span class="vtag">4 platforms</span><h3 class="iname">REVOKE</h3><p class="idesc">Kill switch. Clearance revoked everywhere.</p><div class="sat"><span class="seal" style="background:#E05252"></span>Satisfies DORA &middot; Incident response &middot; Containment</div></div>
-      <div class="iso"><div class="tp"></div><div class="sd2"></div><div class="fr"></div></div>
-    </div>
-  </div>
-</div></section>
-
 <section class="sec alt"><div class="wrap mgi-grid">
   <div>
     <div class="eyebrow"><span class="n">THE ROLL-UP</span> One number for the board</div>
     <h2 class="disp">It rolls into a score <span class="s">your board tracks.</span></h2>
-    <p class="mp">Every signed action, every block, every escalation in the lifecycle above feeds the MOSS Governance Index. <b>One operational score from 200 to 900,</b> updated continuously, the single number a board can hold a team to.</p>
+    <p class="mp">Every signed action, every block, every escalation feeds the MOSS Governance Index. <b>One operational score from 200 to 900,</b> updated continuously, the single number a board can hold a team to.</p>
     <div style="margin-top:22px"><a class="plink" href="mgi.html" style="color:var(--sage)">How the MGI Score works <span class="arr">&rarr;</span></a></div>
   </div>
   <div><div class="gauge">
@@ -1042,9 +977,9 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 
 <section class="sec"><div class="wrap comp-grid">
   <div>
-    <div class="eyebrow"><span class="n">THE COVERAGE</span> one layer, not one tool per regulator</div>
+    <div class="eyebrow"><span class="n">THE COVERAGE</span> 170+ frameworks, 90+ jurisdictions</div>
     <h2 class="disp">One proof layer for <span class="s">every jurisdiction.</span></h2>
-    <p class="cp">MOSS maps every signed action to the frameworks you answer to, 170+ of them across 90+ jurisdictions. <b>The same evidence satisfies DORA, the EU AI Act, and whatever comes next.</b> One tool, every regulator.</p>
+    <p class="cp">The same signed evidence satisfies DORA, the EU AI Act, NIST AI RMF, and whatever comes next. <b>170+ frameworks across 90+ jurisdictions,</b> mapped automatically.</p>
   </div>
   <div>
     <div class="stat4"><div class="c"><div class="v">170+</div><div class="l">Regulatory<br>frameworks</div></div><div class="c"><div class="v">264</div><div class="l">Obligations<br>mapped</div></div><div class="c"><div class="v">90+</div><div class="l">Jurisdictions<br>covered</div></div><div class="c"><div class="v">100%</div><div class="l">AI actions<br>signed</div></div></div>
@@ -1058,74 +993,16 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
   <p class="sd">Not a dashboard screenshot. A signed forensic report with article-by-article findings, the gaps included, and a post-quantum signature any auditor can verify without a MOSS account.</p></div>
   <div class="see-grid" style="margin-top:44px">
     <div class="see-doc">
-<a href="#report-form" class="rg-trigger" aria-label="Get the sample report"><img src="assets/report-thumb.png" alt="Sample MOSS forensic audit report, GDPR"></a>
-      <div class="rgate" id="report-form">
-        <button class="btn btn-sage rg-trigger" type="button">Get the sample report <span class="arr">&rarr;</span></button>
-        <form class="rg-form" id="rg-form">
-          <input type="text" id="rg-name" placeholder="Name" autocomplete="name" required>
-          <input type="email" id="rg-email" placeholder="Work email" autocomplete="email" required>
-          <input type="text" id="rg-company" placeholder="Company (optional)" autocomplete="organization">
-          <input type="text" id="rg-hp" class="rg-hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Leave blank">
-          <button type="submit" class="btn btn-sage" id="rg-submit">Send me the report</button>
-          <p class="rg-fine">We use this to follow up about MOSS. We do not sell or share it.</p>
-        </form>
-        <div class="rg-msg" id="rg-msg"></div>
-      </div>
-      <style>
-      .rgate{margin-top:4px}
-      .rg-form{display:none;flex-direction:column;gap:10px;margin-top:14px;max-width:340px}
-      .rg-form.show{display:flex}
-      .rg-form input{background:var(--bg-inset);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:var(--sans);font-size:14px;padding:11px 12px}
-      .rg-form input:focus{outline:none;border-color:var(--accent)}
-      .rg-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0}
-      .rg-fine{font-size:11.5px;color:var(--faint);margin:2px 0 0}
-      .rg-msg{display:none;margin-top:14px;font-size:14px;color:var(--sage);max-width:360px;line-height:1.5}
-      .rg-msg.show{display:block}
-      .rg-msg.err{color:var(--orange)}
-      </style>
-      <script>
-      (function(){
-        var box=document.getElementById('report-form'); if(!box)return;
-        var form=document.getElementById('rg-form'), msg=document.getElementById('rg-msg');
-        var PDF='assets/downloads/MOSS-Forensic-Report-Sample.pdf';
-        function openForm(e){ if(e)e.preventDefault();
-          document.querySelectorAll('.rg-trigger').forEach(function(b){b.style.display='none';});
-          form.classList.add('show'); var n=document.getElementById('rg-name'); if(n)n.focus();
-        }
-        document.querySelectorAll('.rg-trigger').forEach(function(b){b.addEventListener('click',openForm);});
-        function dl(){ var a=document.createElement('a'); a.href=PDF; a.setAttribute('download',''); document.body.appendChild(a); a.click(); a.remove(); }
-        form.addEventListener('submit',function(e){
-          e.preventDefault();
-          var hp=document.getElementById('rg-hp').value;
-          var name=document.getElementById('rg-name').value.trim();
-          var email=document.getElementById('rg-email').value.trim();
-          var company=document.getElementById('rg-company').value.trim();
-          if(!name||!/.+@.+\..+/.test(email)){ msg.classList.add('show'); msg.classList.add('err'); msg.textContent='Enter your name and a valid work email.'; return; }
-          msg.classList.remove('err');
-          var btn=document.getElementById('rg-submit'); btn.disabled=true; btn.textContent='Sending...';
-          var mailHref='mailto:sales@mosscomputing.com?subject='+encodeURIComponent('Sample report request - '+name)+'&body='+encodeURIComponent('New sample-report request\n\nName: '+name+'\nEmail: '+email+'\nCompany: '+(company||'-')+'\nSource: homepage forensic report');
-          function finish(captured){
-            form.classList.remove('show'); msg.classList.remove('err'); msg.classList.add('show');
-            if(captured){ msg.textContent='Thanks. Your download is starting, and we will follow up by email.'; }
-            else { msg.innerHTML='Thanks, your download is starting. Your email app should open so we receive your request. If it does not open, <a href="'+mailHref+'" style="color:var(--accent);text-decoration:underline">email us here</a>.'; }
-            dl();
-          }
-          if(hp){ finish(true); return; }
-          var W3F_KEY='14560521-3791-4b9b-9fff-913843a555f2';
-          if(!W3F_KEY||W3F_KEY.indexOf('YOUR_')===0){ finish(false); setTimeout(function(){window.location.href=mailHref;},400); return; }
-          fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:W3F_KEY,subject:'New sample report request - '+name,from_name:name,name:name,email:email,company:(company||'-'),source:'homepage forensic report'})})
-            .then(function(r){return r.json().catch(function(){return {};});})
-            .then(function(res){ if(res&&res.success){ finish(true); } else { finish(false); setTimeout(function(){window.location.href=mailHref;},400); } })
-            .catch(function(){ finish(false); setTimeout(function(){window.location.href=mailHref;},400); });
-        });
-      })();
-      </script>
-      <div class="see-cap">GDPR forensic audit &middot; 18 pages &middot; sample tenant mid-assessment</div>
+<a href="assets/downloads/MOSS-Forensic-Report-Sample.pdf" download><img src="assets/report-thumb.png" alt="Sample MOSS forensic audit report, FDA 21 CFR Part 11"></a>
+      <a href="assets/downloads/MOSS-Forensic-Report-Sample.pdf" download class="btn btn-sage" style="width:100%;justify-content:center;margin-top:4px">Download the sample <span class="arr">&darr;</span></a>
+      <div class="see-cap">FDA 21 CFR Part 11 &middot; batch-release-agent &middot; 18 pages &middot; sample tenant mid-assessment</div>
     </div>
     <div class="see-rec">
       <div class="art" style="font-family:var(--mono)"><div class="art-bar"><span>Signed evidence record</span><span style="color:var(--sage)">VERIFIABLE</span></div>
         <div class="art-row"><span class="k">Report ID</span><span class="v">FOR-20260605031950</span></div>
-        <div class="art-row"><span class="k">Framework</span><span class="v">GDPR</span></div>
+        <div class="art-row"><span class="k">Framework</span><span class="v">FDA 21 CFR Part 11</span></div>
+        <div class="art-row"><span class="k">Agent</span><span class="v">batch-release-agent</span></div>
+        <div class="art-row"><span class="k">Finding</span><span class="v" style="color:var(--red)">Electronic signature without identity verification</span></div>
         <div class="art-row"><span class="k">MGI Score</span><span class="v" style="color:var(--red)">333 &middot; Critical</span></div>
         <div class="art-row"><span class="k">Generated</span><span class="v">2026-06-05T03:19:50Z</span></div>
         <div class="art-row"><span class="k">Algorithm</span><span class="v go">ML-DSA-44 &middot; FIPS 204</span></div>
@@ -1140,28 +1017,57 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="eyebrow center" style="justify-content:center"><span class="n">BUILT FOR</span> regulated industries</div>
-  <h2 class="disp center" style="margin-top:18px">Where accountability is not optional</h2>
-  <div class="caps" style="margin-top:44px;grid-template-columns:repeat(4,1fr)">
-    <div class="cap"><h3>Banking</h3><p>DORA, EU AI Act high-risk credit decisions, SR 11-7 model risk.</p></div>
-    <div class="cap"><h3>Insurance</h3><p>EU AI Act pricing and underwriting, NAIC model governance.</p></div>
-    <div class="cap"><h3>Healthcare</h3><p>HIPAA, EU AI Act high-risk, clinical decision provenance.</p></div>
-    <div class="cap"><h3>Pharma</h3><p>FDA 21 CFR Part 11, EU GMP Annex 11, GxP electronic signatures.</p></div>
+  <div class="sec-head"><div class="eyebrow"><span class="n">SHIPPED</span> not slideware</div>
+  <h2 class="disp">Others assess. <span class="s">MOSS enforces.</span></h2></div>
+  <div class="caps" style="margin-top:44px;grid-template-columns:repeat(3,1fr);background:none;border:none;gap:20px">
+    <div class="cap" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:0">
+      <div style="padding:16px 20px;border-bottom:1px solid var(--line)"><div class="ch" style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="seal sl" style="background:var(--sage)"></span><h3 style="font-size:.95rem;font-stretch:108%">Capability Attenuation</h3></div><p style="color:var(--dim);font-size:13px;line-height:1.5">Permissions shrink as they delegate. Revocation pushes to all platforms in under 1 second.</p></div>
+      <div class="art" style="font-family:var(--mono);border:none">
+        <div class="art-row" style="grid-template-columns:auto 1fr auto"><span class="k">Root</span><span class="v" style="color:var(--sage)">read write deploy</span><span class="v" style="color:var(--faint);font-size:9px">3 scopes</span></div>
+        <div class="art-row" style="grid-template-columns:auto 1fr auto"><span class="k">&rarr; Agent A</span><span class="v" style="color:var(--sage)">read write</span><span class="v" style="color:var(--faint);font-size:9px">2 scopes</span></div>
+        <div class="art-row" style="grid-template-columns:auto 1fr auto"><span class="k">&rarr; Agent B</span><span class="v" style="color:var(--sage)">read</span><span class="v" style="color:var(--faint);font-size:9px">1 scope</span></div>
+        <div class="art-row" style="grid-template-columns:auto 1fr auto"><span class="k">&rarr; Agent C</span><span class="v" style="color:var(--red)">REVOKED</span><span class="v" style="color:var(--faint);font-size:9px">0.8s</span></div>
+        <div class="art-foot"><span class="c">4 platforms</span><span class="c">ML-DSA-44</span></div>
+      </div>
+    </div>
+    <div class="cap" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:0">
+      <div style="padding:16px 20px;border-bottom:1px solid var(--line)"><div class="ch" style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="seal sl" style="background:var(--sage)"></span><h3 style="font-size:.95rem;font-stretch:108%">Behavioral Integrity</h3></div><p style="color:var(--dim);font-size:13px;line-height:1.5">Insider-threat model. Negative events hit 2-3x harder than positive. Trust recalibrates at machine speed.</p></div>
+      <div class="art" style="font-family:var(--mono);border:none">
+        <div class="art-row"><span class="k">Agent</span><span class="v">claims-adjudicator-v1</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr 50px"><span class="k">Trust Score</span><span class="v" style="color:var(--sage);font-weight:600">71</span><span class="v" style="color:var(--faint);font-size:9px">&darr; from 89</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr 50px"><span class="k">Event</span><span class="v" style="color:var(--red)">Anomaly: output variance</span><span class="v" style="color:var(--faint);font-size:9px">&minus;18</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr 50px"><span class="k">Event</span><span class="v" style="color:var(--sage)">Approved: 42 claims</span><span class="v" style="color:var(--faint);font-size:9px">+6</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr 50px"><span class="k">Reciprocity</span><span class="v" style="color:var(--red)">Gaming detected</span><span class="v" style="color:var(--faint);font-size:9px">flag</span></div>
+        <div class="art-foot"><span class="c">Asymmetric</span><span class="c">Real-time</span></div>
+      </div>
+    </div>
+    <div class="cap" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:0">
+      <div style="padding:16px 20px;border-bottom:1px solid var(--line)"><div class="ch" style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="seal sl" style="background:var(--sage)"></span><h3 style="font-size:.95rem;font-stretch:108%">Workflow Governance</h3></div><p style="color:var(--dim);font-size:13px;line-height:1.5">Policies evaluated against the provenance graph before the action happens. Five invariant checks verify retroactively.</p></div>
+      <div class="art" style="font-family:var(--mono);border:none">
+        <div class="art-row"><span class="k">Action</span><span class="v">cross_dept_synthesis</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr"><span class="k">Policy</span><span class="v">Provenance isolation required</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr"><span class="k">Result</span><span class="v" style="color:var(--red);font-weight:600">BLOCKED before execution</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr"><span class="k">Invariants</span><span class="v">5 of 5 checked</span></div>
+        <div class="art-row" style="grid-template-columns:130px 1fr"><span class="k">Signed</span><span class="v">ML-DSA-44 &middot; 7f2a8b…</span></div>
+        <div class="art-foot"><span class="c">Pre-execution</span><span class="c">5 invariants</span></div>
+      </div>
+    </div>
   </div>
-  <div class="center" style="margin-top:30px"><a class="plink" href="solutions.html" style="color:var(--sage)">See solutions by industry <span class="arr">&rarr;</span></a></div>
+  <div style="margin-top:24px;font-family:var(--mono);font-size:11.5px;color:var(--faint);line-height:1.6;max-width:54em">M18 &middot; M19 &middot; M20 &middot; M21 shipped. M22 in progress. <a href="changelog.html" style="color:var(--sage);border-bottom:1px solid var(--sage-mid)">What shipped</a></div>
 </div></section>
 
 <section class="prod console alt"><div class="wrap prod-in">
   <div class="pc-copy"><span class="pl"><span class="pm console"></span>MOSS Console &middot; Runtime governance</span>
-    <h3 class="disp">Govern and control</h3>
-    <p class="pv">The lifecycle above is Console. <b>Policy enforced before execution, human-in-the-loop, anomaly detection, and a kill switch that fires across every platform at once.</b> Each action signed with ML-DSA-44, and rolled into your MGI Score.</p>
+    <h3 class="disp">Stop a rogue agent in under one second.</h3>
+    <p class="pv"><b>Policy enforced before execution, human-in-the-loop, anomaly detection, and a kill switch that fires across every platform at once.</b> Each action signed with ML-DSA-44, rolled into your MGI Score.</p>
     <ul class="pcaps"><li><span class="seal sl"></span><span>Kill switch and policy enforcement across Google, AWS, Azure, and on-prem.</span></li><li><span class="seal sl"></span><span>Anomaly detection across 7 behavioral types. SIEM streaming to Splunk, Datadog, Elastic, QRadar.</span></li><li><span class="seal sl"></span><span>The MGI Score: one operational governance index, 200 to 900, tracked at board level.</span></li></ul>
     <a class="plink" href="console.html">See Console <span class="arr">&rarr;</span></a></div>
   <div class="pc-vis"><div class="art"><div class="art-bar"><span>MOSS Action Record</span><span style="color:var(--sage)">VERIFIED</span></div>
-  <div class="art-row"><span class="k">Agent</span><span class="v">credit-decision-prod</span></div>
-  <div class="art-row"><span class="k">Action</span><span class="v">loan_application.evaluate</span></div>
+  <div class="art-row"><span class="k">Agent</span><span class="v">loan-underwriter-v2</span></div>
+  <div class="art-row"><span class="k">Action</span><span class="v">credit_decision.approve</span></div>
   <div class="art-row"><span class="k">Decision</span><span class="v go">ALLOW</span></div>
-  <div class="art-row"><span class="k">Framework</span><span class="v">EU AI Act &middot; Art. 12</span></div>
+  <div class="art-row"><span class="k">Amount</span><span class="v">$847,000</span></div>
+  <div class="art-row"><span class="k">Framework</span><span class="v">EU AI Act &middot; Art. 22 &middot; SR 11-7</span></div>
   <div class="art-row"><span class="k">Algorithm</span><span class="v">ML-DSA-44 &middot; FIPS 204</span></div>
   <div class="art-row"><span class="k">Signature</span><span class="v">3f7a9c&middot;d82e1b&middot;44fa0c…</span></div>
   <div class="art-foot"><span class="c">Tamper-proof</span><span class="c">Post-quantum</span><span class="c">Regulator-ready</span></div></div></div>
@@ -1173,11 +1079,13 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
     <p class="pv">An agent holds a MOSS Passport or it does not. <b>Binary, never a score.</b> Four layers must all pass: identity, capability, behavior, governability. One Passport covers an agent across every platform it runs on. Verifying an agent is always free.</p>
     <ul class="pcaps"><li><span class="seal sl" style="background:var(--accent)"></span><span>Cross-platform and neutral. MOSS verifies agents across platforms no single hyperscaler can reach.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>Offline-verifiable evidence export. An auditor confirms provenance without calling our servers.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>95+ regulatory frameworks across 90+ jurisdictions, mapped per Passport.</span></li></ul>
     <a class="plink" href="trust.html">Verify an agent <span class="arr">&rarr;</span></a></div>
-  <div class="pc-vis"><div class="art"><div class="art-bar"><span>MOSS Passport &middot; credit-decision-prod</span><span style="color:var(--accent)">ISSUED</span></div>
+  <div class="pc-vis"><div class="art"><div class="art-bar"><span>MOSS Passport &middot; claims-adjudicator-v1</span><span style="color:var(--accent)">ISSUED</span></div>
   <div class="pl-row"><span class="l">Identity</span><span class="v"><span class="seal sl"></span>VERIFIED</span></div>
   <div class="pl-row"><span class="l">Capability</span><span class="v"><span class="seal sl"></span>VERIFIED</span></div>
   <div class="pl-row"><span class="l">Behavior</span><span class="v"><span class="seal sl"></span>VERIFIED</span></div>
   <div class="pl-row"><span class="l">Governability</span><span class="v"><span class="seal sl"></span>VERIFIED</span></div>
+  <div class="pl-row" style="border-top:1px solid var(--line);margin-top:6px;padding-top:10px"><span class="l">Framework</span><span class="v" style="color:var(--muted)">EU AI Act &middot; NAIC</span></div>
+  <div class="pl-row"><span class="l">Platforms</span><span class="v" style="color:var(--muted)">AWS &middot; Azure &middot; on-prem</span></div>
   <div class="art-foot"><span class="c">ML-DSA-44</span><span class="c">4 of 4 layers</span><span class="c">Offline-verifiable</span></div></div></div>
 </div></section>
 
@@ -1188,7 +1096,7 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
     <ul class="pcaps"><li><span class="seal sl" style="background:var(--accent)"></span><span>59 detection rules across Python, JavaScript, and Java. RSA, ECDSA, DSA, JWT, TLS, X.509.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>A complete crypto inventory: severity, file, and line for every finding.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>Auto-fixable findings ship as a ready-to-review pull request to ML-DSA-44.</span></li></ul>
     <div class="pc-free"><span class="fl">FREE SCAN</span><br>Scan your code. No account required.</div>
     <a class="plink" href="pqc.html">Scan a repo <span class="arr">&rarr;</span></a></div>
-  <div class="pc-vis"><div class="art"><div class="art-bar"><span>acme-financial/auth-service &middot; jwt.py:42</span><span style="color:var(--accent)">RSA &rarr; ML-DSA-44</span></div>
+  <div class="pc-vis"><div class="art"><div class="art-bar"><span>northwind-bank/payment-gateway &middot; jwt.py:42</span><span style="color:var(--accent)">RSA &rarr; ML-DSA-44</span></div>
   <div class="dl ctx"><span class="ln">40</span><span class="c">def issue_token(claims):</span></div>
   <div class="dl rem"><span class="ln sgn">−</span><span class="c">  key = rsa.generate_private_key(2048)</span></div>
   <div class="dl rem"><span class="ln sgn">−</span><span class="c">  return jwt.encode(claims, key, "RS256")</span></div>
@@ -1199,23 +1107,21 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 
 <section class="sec"><div class="wrap">
   <h2 class="disp center">Works with what you already run</h2>
-  <div class="center" style="color:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin:8px 0 clamp(34px,4vw,48px)">No rip and replace. MOSS sits over your existing stack.</div>
-  <div class="cband"><div class="clab">AI frameworks &amp; SDKs</div><div class="tags"><span>Python</span><span>TypeScript</span><span>Go</span><span>Java</span><span>.NET</span><span>Rust</span><span>LangChain</span><span>LangGraph</span><span>CrewAI</span><span>AutoGen</span><span>OpenAI</span><span>Anthropic</span><span>Google Gemini</span><span>MCP</span></div></div>
+  <div class="cband" style="margin-top:34px"><div class="clab">AI frameworks &amp; SDKs</div><div class="tags"><span>Python</span><span>TypeScript</span><span>Go</span><span>Java</span><span>.NET</span><span>Rust</span><span>LangChain</span><span>LangGraph</span><span>CrewAI</span><span>AutoGen</span><span>OpenAI</span><span>Anthropic</span><span>Google Gemini</span><span>MCP</span></div></div>
   <div class="cband"><div class="clab">Platforms &amp; SIEM</div><div class="tags"><span>Google Vertex</span><span>AWS Bedrock</span><span>Azure Foundry</span><span>On-prem</span><span>Splunk</span><span>Datadog</span><span>Elastic</span><span>QRadar</span></div></div>
   <div class="cband"><div class="clab">Regulatory frameworks</div><div class="tags"><span>EU AI Act</span><span>DORA</span><span>NIST AI RMF</span><span>ISO 42001</span><span>GDPR Art. 22</span><span>HIPAA</span><span>SOC 2</span><span>FCA</span><span>SR 11-7</span><span>FIPS 204</span></div></div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="n">MOSS AI Registry</span> Free public utility</div>
-  <h2 class="disp">See where you stand.</h2>
-  <p class="sd">The MOSS AI Registry is the public directory for AI governance accountability. Search 780 companies, request an MGI Score for any of them, and see which ones the market most wants scored. No account required.</p>
-  <div class="hero-cta"><a class="btn btn-sage" href="https://airegistry.mosscomputing.com">Open the registry <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="mgi.html">How the MGI Score works</a></div></div>
+  <div class="sec-head"><div class="eyebrow"><span class="n">MOSS AI REGISTRY</span> free public utility</div>
+  <h2 class="disp">788 AI companies. <span class="s">Enterprises are checking.</span></h2>
+  <div class="hero-cta"><a class="btn btn-sage" href="https://airegistry.mosscomputing.com">Open the registry <span class="arr">&rarr;</span></a></div></div>
 </div></section>
 <section class="sec qband"><div class="wrap">
   <div>
     <div class="eyebrow"><span class="n">The second clock</span></div>
-    <h2 class="disp">While you govern your agents, a second clock is running.</h2>
-    <p class="sd">Harvest-now-decrypt-later means data captured today is broken the day a quantum computer arrives. Anything signed or encrypted with RSA or elliptic-curve now is already exposed. MOSS finds the quantum-vulnerable cryptography in your stack and moves it to the NIST post-quantum standard.</p>
-    <div class="hero-cta q-cta"><a class="btn btn-pqc" href="https://pqc.mosscomputing.com">Find your quantum exposure <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="pqc.html">Quantum use cases</a></div>
+    <h2 class="disp">Your cryptography has an expiration date.</h2>
+    <p class="sd">Anything signed or encrypted with RSA or elliptic-curve today is already captured. The day a quantum computer arrives, it breaks. MOSS finds the vulnerable cryptography in your stack and moves it to the NIST post-quantum standard.</p>
+    <div class="hero-cta q-cta"><a class="btn btn-pqc" href="https://pqc.mosscomputing.com">Find your quantum exposure <span class="arr">&rarr;</span></a></div>
   </div>
   <div class="qclock">
     <div class="qnode"><span class="qdot"></span><div><div class="qyr">today</div><div class="qlb">Adversaries capture and store your encrypted data</div></div></div>
@@ -1224,8 +1130,7 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
   </div>
 </div></section>
 <section class="final" id="demo"><div class="wrap"><h2 class="disp">See MOSS on your own agents.</h2><p class="fs">Connect your agents to MOSS Console and prove every action, or book a walkthrough with the team.</p>
-    <div class="final-cta"><a class="btn btn-sage" href="https://calendar.app.google/rHYPhPTrmhq6hEqA6">Book a demo <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="calculator.html">Calculate your exposure</a></div>
-    <p class="final-fine">Worried about quantum first? Scan a repository in PQC Migration.</p></div></section>
+    <div class="final-cta"><a class="btn btn-sage" href="https://calendar.app.google/rHYPhPTrmhq6hEqA6">Book a demo <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="calculator.html">Calculate your exposure</a></div></div></section>
 <footer><div class="wrap">
   <div class="foot-top">
     <div class="fb"><div class="fbn"><svg width="24" height="24" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="2.5" y="4" width="19" height="21" rx="5" stroke="#A8C090" stroke-width="2.2" fill="none"/><circle cx="26" cy="6" r="3" fill="#A8C090"/></svg><span class="t">MOSS COMPUTING</span></div>
@@ -1233,8 +1138,8 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
       <div class="tag">Deploy AI without fear</div>
       <div class="fb-flags" title="Operating in the United States, European Union, and United Kingdom"><svg class="flag" viewBox="0 0 22 15" width="22" height="15" role="img" aria-label="United States"><rect width="22" height="15" fill="#B22234"/><g fill="#fff"><rect y="1.15" width="22" height="1.15"/><rect y="3.46" width="22" height="1.15"/><rect y="5.77" width="22" height="1.15"/><rect y="8.08" width="22" height="1.15"/><rect y="10.38" width="22" height="1.15"/><rect y="12.69" width="22" height="1.15"/></g><rect width="9.2" height="8.08" fill="#3C3B6E"/><g fill="#fff"><circle cx="1.6" cy="1.6" r="0.42"/><circle cx="3.6" cy="1.6" r="0.42"/><circle cx="5.6" cy="1.6" r="0.42"/><circle cx="7.6" cy="1.6" r="0.42"/><circle cx="1.6" cy="3.9" r="0.42"/><circle cx="3.6" cy="3.9" r="0.42"/><circle cx="5.6" cy="3.9" r="0.42"/><circle cx="7.6" cy="3.9" r="0.42"/><circle cx="1.6" cy="6.2" r="0.42"/><circle cx="3.6" cy="6.2" r="0.42"/><circle cx="5.6" cy="6.2" r="0.42"/><circle cx="7.6" cy="6.2" r="0.42"/></g></svg><svg class="flag" viewBox="0 0 22 15" width="22" height="15" role="img" aria-label="European Union"><rect width="22" height="15" fill="#003399"/><g fill="#FFCC00"><circle cx="11.00" cy="3.20" r="0.7"/><circle cx="13.15" cy="3.78" r="0.7"/><circle cx="14.72" cy="5.35" r="0.7"/><circle cx="15.30" cy="7.50" r="0.7"/><circle cx="14.72" cy="9.65" r="0.7"/><circle cx="13.15" cy="11.22" r="0.7"/><circle cx="11.00" cy="11.80" r="0.7"/><circle cx="8.85" cy="11.22" r="0.7"/><circle cx="7.28" cy="9.65" r="0.7"/><circle cx="6.70" cy="7.50" r="0.7"/><circle cx="7.28" cy="5.35" r="0.7"/><circle cx="8.85" cy="3.78" r="0.7"/></g></svg><svg class="flag" viewBox="0 0 22 15" width="22" height="15" role="img" aria-label="United Kingdom"><rect width="22" height="15" fill="#012169"/><path d="M0 0L22 15M22 0L0 15" stroke="#fff" stroke-width="3"/><path d="M0 0L22 15M22 0L0 15" stroke="#C8102E" stroke-width="1.3"/><rect x="8" width="6" height="15" fill="#fff"/><rect y="4.5" width="22" height="6" fill="#fff"/><rect x="9.2" width="3.6" height="15" fill="#C8102E"/><rect y="5.7" width="22" height="3.6" fill="#C8102E"/></svg></div></div>
     <div class="fcol"><h4>Products</h4><a href="console.html">Console</a><a href="trust.html">Trust</a><a href="pqc.html">PQC Migration</a><a href="pricing.html">Pricing</a></div>
-    <div class="fcol"><h4>Capabilities</h4><a href="docs-killswitch.html">Kill Switch</a><a href="trust.html">Trust Network</a><a href="docs-trust.html">ZK Proofs</a><a href="docs-anomaly.html">Runtime Governance</a></div>
-    <div class="fcol"><h4>Capabilities</h4><a href="docs-killswitch.html">Kill Switch</a><a href="trust.html">Trust Network</a><a href="docs-trust.html">ZK Proofs</a><a href="docs-anomaly.html">Runtime Governance</a></div><div class="fcol"><h4>Resources</h4><a href="docs.html">Documentation</a><a href="docs-api.html">API Reference</a><a href="mgi.html">MGI Score</a><a href="https://airegistry.mosscomputing.com">AI Registry</a><a href="security.html">Security</a></div>
+    <div class="fcol"><h4>Capabilities</h4><a href="docs-killswitch.html">Kill Switch</a><a href="trust.html">Trust Network</a><a href="docs-anomaly.html">Runtime Governance</a><a href="docs-signing.html">Cryptographic Signing</a></div>
+    <div class="fcol"><h4>Resources</h4><a href="docs.html">Documentation</a><a href="docs-api.html">API Reference</a><a href="mgi.html">MGI Score</a><a href="https://airegistry.mosscomputing.com">AI Registry</a><a href="changelog.html">Changelog</a><a href="security.html">Security</a></div>
     <div class="fcol"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a><a href="about.html#thesis">Our thesis</a></div>
     <div class="fcol"><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="dpa.html">DPA</a><a href="security.html">Trust Center</a></div>
   </div>
@@ -1249,13 +1154,5 @@ els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top < window.inne
 var gs=[].slice.call(document.querySelectorAll(".gscore"));
 function up(el,to){var start=Math.max(200,to-240),t0=null;function st(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1100);var e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;el.textContent=Math.round(start+(to-start)*e);if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);}
 gs.forEach(function(el){var to=parseInt((el.textContent||"").replace(/\D/g,""),10);if(!to)return;var g2=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){up(el,to);g2.unobserve(e.target);}});},{threshold:.4});g2.observe(el);});
-})();</script><script>(function(){var r=matchMedia('(prefers-reduced-motion: reduce)').matches;var c=document.querySelectorAll('#clr .cond');if(!c.length)return;var det=document.getElementById('det'),dt=document.getElementById('dt'),ds=document.getElementById('ds'),sig=document.getElementById('sig');var S='3f7a9c · d82e1b · 44fa0c · 9e21b7…';function m(x){x.classList.add('met');x.querySelector('.stat').textContent='satisfied'}function cl(){det.classList.add('cleared');dt.textContent='CLEARED FOR PRODUCTION';ds.textContent='all conditions satisfied · MOSS-signed'}if(r){c.forEach(m);cl();sig.textContent=S;return}function st(i){if(i>=c.length){setTimeout(function(){cl();setTimeout(ty,360)},300);return}m(c[i]);ds.textContent=(c.length-i-1)+' conditions outstanding';setTimeout(function(){st(i+1)},600)}function ty(){var i=0;var iv=setInterval(function(){i++;sig.textContent=S.slice(0,i);if(i>=S.length)clearInterval(iv)},14)}addEventListener('load',function(){setTimeout(function(){st(0)},650)})})();</script><script>(function(){
-var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-var t=document.querySelector(".tower"); if(!t)return;
-var rows=[].slice.call(t.querySelectorAll(".lrow"));
-if(reduce||!("IntersectionObserver" in window))return;
-t.classList.add("armed");
-var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){rows.forEach(function(r,i){setTimeout(function(){r.classList.add("built");},i*130);});io.disconnect();}});},{threshold:.15});
-io.observe(t);
-})();</script>
+})();</script><script>(function(){var r=matchMedia('(prefers-reduced-motion: reduce)').matches;var c=document.querySelectorAll('#clr .cond');if(!c.length)return;var det=document.getElementById('det'),dt=document.getElementById('dt'),ds=document.getElementById('ds'),sig=document.getElementById('sig');var S='3f7a9c · d82e1b · 44fa0c · 9e21b7…';function m(x){x.classList.add('met');x.querySelector('.stat').textContent='satisfied'}function cl(){det.classList.add('cleared');dt.textContent='CLEARED FOR PRODUCTION';ds.textContent='all conditions satisfied · MOSS-signed'}if(r){c.forEach(m);cl();sig.textContent=S;return}function st(i){if(i>=c.length){setTimeout(function(){cl();setTimeout(ty,360)},300);return}m(c[i]);ds.textContent=(c.length-i-1)+' conditions outstanding';setTimeout(function(){st(i+1)},600)}function ty(){var i=0;var iv=setInterval(function(){i++;sig.textContent=S.slice(0,i);if(i>=S.length)clearInterval(iv)},14)}addEventListener('load',function(){setTimeout(function(){st(0)},650)})})();</script>
 </body></html>

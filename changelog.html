@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><meta name="theme-color" content="#1A1C20">
+<title>Changelog &middot; MOSS Computing</title><meta name="description" content="What we shipped. Real infrastructure, real cryptography, real production. Not slideware.">
+<link rel="canonical" href="https://mosscomputing.com/changelog.html">
+<style>@font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-500-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-600-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-800-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(assets/fonts/Archivo-800-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/Inter-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/Inter-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/Inter-500-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/Inter-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/Inter-600-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/Inter-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/JetBrainsMono-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/JetBrainsMono-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/JetBrainsMono-500-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/JetBrainsMono-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/JetBrainsMono-600-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/JetBrainsMono-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+<link rel="stylesheet" href="assets/moss.css">
+<style>
+.cl-page{max-width:760px;margin:0 auto;padding:120px 0 80px}
+.cl-page h1{font-family:var(--display);font-weight:800;font-stretch:125%;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.015em;line-height:1.04;margin-bottom:16px}
+.cl-page h1 .s{color:var(--sage)}
+.cl-page .cl-sub{color:var(--dim);font-size:1.08rem;max-width:34em;line-height:1.5;margin-bottom:48px}
+.cl-entry{border-top:1px solid var(--line);padding:36px 0}
+.cl-entry:last-child{border-bottom:1px solid var(--line)}
+.cl-date{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.cl-entry h2{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:1.5rem;line-height:1.1;margin-bottom:14px}
+.cl-entry h2 .s{color:var(--sage)}
+.cl-entry p{color:var(--dim);font-size:.98rem;line-height:1.6;margin-bottom:12px}
+.cl-entry ul{color:var(--dim);margin:0 0 14px 18px;line-height:1.6;font-size:.96rem}
+.cl-entry li{margin-bottom:6px}
+.cl-entry li b{color:var(--text);font-weight:600}
+.cl-status{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-left:12px;vertical-align:middle}
+.cl-status.shipped{background:var(--sage-dim);color:var(--sage)}
+.cl-status.progress{background:rgba(212,132,90,.12);color:var(--orange)}
+</style>
+</head><body>
+<div class="topbar"><div class="wrap topbar-in"><span><span class="dot"></span>MOSS &middot; operational</span><span class="r"><span>ML-DSA-44 &middot; FIPS 204</span><span>verifiable offline</span></span></div></div>
+<header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="2.5" y="4" width="19" height="21" rx="5" ry="5" stroke="#A8C090" stroke-width="2.2" fill="none"/><circle cx="26" cy="6" r="3" fill="#A8C090"/></svg><div><div class="bt">MOSS</div><div class="bs">COMPUTING</div></div></a>
+  <nav class="navlinks"><div class="navdd"><a href="platform.html">Products</a><div class="navdd-panel">
+  <a href="console.html"><b>Console</b><span>Runtime governance, MGI Score, kill switch</span></a>
+  <a href="trust.html"><b>Trust</b><span>Cross-platform Passport verification</span></a>
+  <a href="pqc.html" class="ddpqc"><b>PQC Migration</b><span>Find and fix quantum-vulnerable cryptography</span></a>
+</div></div><a href="solutions.html">Solutions</a><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a><a href="about.html">Company</a></nav>
+  <div class="nav-cta"><a class="si" href="https://app.mosscomputing.com">Sign in</a><a class="btn btn-sage" href="https://calendar.app.google/rHYPhPTrmhq6hEqA6">Book a demo</a></div>
+  <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobnav">MENU</button>
+</div><nav class="mobnav" id="mobnav"><a href="platform.html">Products</a><a class="mob-sub" href="console.html">Console</a><a class="mob-sub" href="trust.html">Trust</a><a class="mob-sub" href="pqc.html">PQC Migration</a><a href="solutions.html">Solutions</a><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a><a href="about.html">Company</a><a href="https://app.mosscomputing.com">Sign in</a></nav></header>
+
+<div class="cl-page"><div class="wrap">
+  <h1 class="disp">What we <span class="s">shipped.</span></h1>
+  <p class="cl-sub">Real infrastructure. Real cryptography. Real production. Not slideware, not roadmaps, not promises. Here is what is running.</p>
+
+  <div class="cl-entry">
+    <div class="cl-date">June 30, 2026</div>
+    <h2>M21: Workflow Governance <span class="cl-status progress">in progress</span></h2>
+    <p>Workflow-level authorization policies evaluated against the execution-envelope dependency graph. Policies enforced <b>before the action happens</b>, not after.</p>
+    <ul>
+      <li><b>Policy engine</b> with ALLOW/DENY/ESCALATE decisions, priority ordering, fail_mode handling, structured rule evaluation</li>
+      <li><b>5 seeded builtin policies</b>: cross-department synthesis, classification ceiling, aggregation risk, PII isolation, max delegation depth</li>
+      <li><b>Invariant verification</b> across 5 checks: temporal validity, token bounds, delegation depth, classification monotonicity, source compatibility</li>
+      <li><b>M20 integration</b>: policy gate runs before envelope creation, verification triggers on workflow completion and token revocation</li>
+      <li>87 tests passing, CI green, PR merged</li>
+    </ul>
+  </div>
+
+  <div class="cl-entry">
+    <div class="cl-date">June 29, 2026</div>
+    <h2>M20: Authorization Propagation <span class="cl-status shipped">shipped</span></h2>
+    <p>Invocation-bound capability tokens with attenuation. Execution envelopes with provenance. Sub-second push revocation. The foundation for multi-agent authorization.</p>
+    <ul>
+      <li><b>Capability tokens</b> with delegation chains, max depth, execution limits, per-action attenuation</li>
+      <li><b>Execution envelopes</b> with provenance hashes, source departments, classification tracking, aggregation risk scoring</li>
+      <li><b>Push revocation</b> across all platforms in under 1 second, with cascade to delegated tokens</li>
+      <li><b>Fail-and-report</b> escalations: one-pending-per-workflow, reviewer resolution, scoped token issuance</li>
+      <li><b>Cross-org trust</b>: signed verification, governance scores, trust webhooks</li>
+      <li>385 tests passing, deployed to production</li>
+    </ul>
+  </div>
+
+  <div class="cl-entry">
+    <div class="cl-date">June 28, 2026</div>
+    <h2>M19: Agent Runtime SDK <span class="cl-status shipped">shipped</span></h2>
+    <p>Agent runtime SDK with behavioral fingerprinting and drift detection. The SDK that mediates every agent action through MOSS governance.</p>
+    <ul>
+      <li><b>Agent registration</b> with declared capabilities and constraints</li>
+      <li><b>Behavioral fingerprinting</b> with cosine similarity scoring and drift detection</li>
+      <li><b>Forensic replay API</b> for post-incident analysis</li>
+      <li>SDKs for Python, TypeScript, Go, Java, .NET, Rust</li>
+    </ul>
+  </div>
+
+  <div class="cl-entry">
+    <div class="cl-date">June 27, 2026</div>
+    <h2>M18: Governance Infrastructure Foundation <span class="cl-status shipped">shipped</span></h2>
+    <p>The foundational layer. Evidence chain with ML-DSA-44 signatures, quantum-safe verification, and the audit vault that makes every action provable.</p>
+    <ul>
+      <li><b>SIEM integration</b> with ML-DSA-44 signed events to Splunk, Datadog, Elastic, QRadar</li>
+      <li><b>Evidence chain</b> with Merkle tree aggregation and post-quantum signatures</li>
+      <li><b>Audit vault</b> with tamper-evident storage and offline verification</li>
+    </ul>
+  </div>
+
+</div></div>
+
+<footer><div class="wrap">
+  <div class="foot-top">
+    <div class="fb"><div class="fbn"><svg width="24" height="24" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="2.5" y="4" width="19" height="21" rx="5" stroke="#A8C090" stroke-width="2.2" fill="none"/><circle cx="26" cy="6" r="3" fill="#A8C090"/></svg><span class="t">MOSS COMPUTING</span></div>
+      <p>Governance infrastructure for AI. Real-time agent monitoring, post-quantum signed evidence, instant kill switch.</p>
+      <div class="tag">Deploy AI without fear</div>
+    </div>
+    <div class="fcol"><h4>Products</h4><a href="console.html">Console</a><a href="trust.html">Trust</a><a href="pqc.html">PQC Migration</a><a href="pricing.html">Pricing</a></div>
+    <div class="fcol"><h4>Capabilities</h4><a href="docs-killswitch.html">Kill Switch</a><a href="trust.html">Trust Network</a><a href="docs-anomaly.html">Runtime Governance</a><a href="docs-signing.html">Cryptographic Signing</a></div>
+    <div class="fcol"><h4>Resources</h4><a href="docs.html">Documentation</a><a href="docs-api.html">API Reference</a><a href="mgi.html">MGI Score</a><a href="changelog.html">Changelog</a><a href="security.html">Security</a></div>
+    <div class="fcol"><h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div>
+    <div class="fcol"><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="dpa.html">DPA</a><a href="security.html">Trust Center</a></div>
+  </div>
+  <div class="foot-bot"><span>&copy; 2026 IAMPASS Technologies Inc</span><div class="r"><a href="https://www.linkedin.com/company/mosscomputing">LinkedIn</a><a href="https://x.com/mosscomputing">X</a><span>ML-DSA-44 &middot; FIPS 204</span></div></div>
+</div></footer>
+<script>(function(){var b=document.querySelector('.menu-btn'),n=document.getElementById('mobnav');if(!b)return;b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'CLOSE':'MENU'})})();</script>
+</body></html>
