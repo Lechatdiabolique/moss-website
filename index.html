@@ -368,6 +368,11 @@ section.sec.alt{background:var(--bg-inset)}
 .tags span{font-family:var(--mono);font-size:12px;color:var(--dim);border:1px solid var(--line);padding:8px 13px;transition:border-color .15s,color .15s}
 .tags span:hover{border-color:var(--line-strong);color:var(--text)}
 
+/* ---- capability tags (Vercel-style feature tags) ---- */
+.cap-tags{display:flex;flex-wrap:wrap;gap:8px}
+.cap-tags span{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);padding:6px 11px;letter-spacing:.02em;transition:border-color .15s,color .15s}
+.cap-tags span:hover{border-color:var(--sage-mid);color:var(--text)}
+
 /* ---- products on home ---- */
 .prod{padding:clamp(56px,8vw,92px) 0;border-top:1px solid var(--line-faint)}
 .prod.alt{background:var(--bg-inset)}
@@ -425,6 +430,15 @@ section.sec.alt{background:var(--bg-inset)}
 .cap .ch{display:flex;align-items:center;gap:11px;margin-bottom:11px}
 .cap h3{font-size:1.12rem;font-stretch:108%}
 .cap p{color:var(--dim);font-size:14px;line-height:1.55}
+
+/* ---- capability artifacts (bleeding edge features) ---- */
+.cap-art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cap-art{display:flex;flex-direction:column;gap:16px}
+.cap-art-h{display:flex;align-items:center;gap:11px}
+.cap-art-h h3{font-family:var(--display);font-weight:800;font-stretch:115%;font-size:1.05rem;line-height:1.1}
+.cap-art-d{color:var(--dim);font-size:13.5px;line-height:1.55;margin:0}
+.cap-art .art{flex:1;box-shadow:0 20px 50px -32px rgba(0,0,0,.8)}
+@media(max-width:980px){.cap-art-grid{grid-template-columns:1fr;gap:20px}}
 
 /* ---- pricing ---- */
 .ptable{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -942,9 +956,8 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 @media (max-width:860px){.see-grid{grid-template-columns:1fr;gap:34px}}
 </style><section class="sec hero-split" style="border-top:none;padding-top:clamp(40px,5vw,66px);padding-bottom:clamp(42px,5vw,66px)"><div class="wrap hero-grid">
   <div class="hero-copy">
-    <div class="eyebrow"><span class="n">MOSS</span> GOVERNANCE INFRASTRUCTURE FOR AI</div>
     <h1 class="disp">Deploy AI <span class="s">without fear.</span></h1>
-    <p class="sd">Govern every agent action in real-time. Sign it with post-quantum cryptography. Stop rogue agents instantly. Not paperwork. Infrastructure.</p>
+    <p class="sd">Every agent action authorized before it happens. Signed with post-quantum cryptography. Stopped instantly if it drifts. <b>Not paperwork. Infrastructure.</b></p>
     <div class="hero-cta"><a class="btn btn-sage" href="https://calendar.app.google/rHYPhPTrmhq6hEqA6">Book a demo <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="calculator.html">Calculate your exposure</a></div>
     <div class="proofbar"><span><b>FIPS 204</b> ML-DSA-44</span><span>Every action signed</span><span>Instant kill switch</span><span>Cross-platform governance</span></div>
   </div>
@@ -963,9 +976,8 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 
 <section class="sec alt"><div class="wrap mgi-grid">
   <div>
-    <div class="eyebrow"><span class="n">THE ROLL-UP</span> One number for the board</div>
-    <h2 class="disp">It rolls into a score <span class="s">your board tracks.</span></h2>
-    <p class="mp">Every signed action, every block, every escalation feeds the MOSS Governance Index. <b>One operational score from 200 to 900,</b> updated continuously, the single number a board can hold a team to.</p>
+    <h2 class="disp">The number <span class="s">your board tracks.</span></h2>
+    <div class="cap-tags" style="margin-top:22px"><span>200 to 900</span><span>Real-time</span><span>Board-level</span><span>Continuously updated</span></div>
     <div style="margin-top:22px"><a class="plink" href="mgi.html" style="color:var(--sage)">How the MGI Score works <span class="arr">&rarr;</span></a></div>
   </div>
   <div><div class="gauge">
@@ -977,21 +989,18 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 
 <section class="sec"><div class="wrap comp-grid">
   <div>
-    <div class="eyebrow"><span class="n">THE COVERAGE</span> 170+ frameworks, 90+ jurisdictions</div>
     <h2 class="disp">One proof layer for <span class="s">every jurisdiction.</span></h2>
-    <p class="cp">The same signed evidence satisfies DORA, the EU AI Act, NIST AI RMF, and whatever comes next. <b>170+ frameworks across 90+ jurisdictions,</b> mapped automatically.</p>
+    <div class="cap-tags" style="margin-top:22px"><span>EU AI Act</span><span>DORA</span><span>NIST AI RMF</span><span>ISO 42001</span><span>SOC 2</span><span>HIPAA</span><span>GDPR Art. 22</span></div>
   </div>
   <div>
     <div class="stat4"><div class="c"><div class="v">170+</div><div class="l">Regulatory<br>frameworks</div></div><div class="c"><div class="v">264</div><div class="l">Obligations<br>mapped</div></div><div class="c"><div class="v">90+</div><div class="l">Jurisdictions<br>covered</div></div><div class="c"><div class="v">100%</div><div class="l">AI actions<br>signed</div></div></div>
-    <div class="frlist"><span>EU AI Act</span><span>DORA</span><span>NIST AI RMF</span><span>ISO 42001</span><span>SOC 2</span><span>HIPAA</span><span>GDPR Art. 22</span></div>
   </div>
 </div></section>
 
 <section class="sec alt"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="n">SEE IT</span> The actual output</div>
-  <h2 class="disp">This is what you hand a <span class="s">regulator.</span></h2>
-  <p class="sd">Not a dashboard screenshot. A signed forensic report with article-by-article findings, the gaps included, and a post-quantum signature any auditor can verify without a MOSS account.</p></div>
-  <div class="see-grid" style="margin-top:44px">
+  <h2 class="disp" style="max-width:18em">This is what you hand a <span class="s">regulator.</span></h2>
+  <div class="cap-tags" style="margin-top:18px;margin-bottom:44px"><span>Post-quantum</span><span>Tamper-evident</span><span>Independently verifiable</span><span>18 pages</span></div>
+  <div class="see-grid">
     <div class="see-doc">
 <a href="assets/downloads/MOSS-Forensic-Report-Sample.pdf" download><img src="assets/report-thumb.png" alt="Sample MOSS forensic audit report, FDA 21 CFR Part 11"></a>
       <a href="assets/downloads/MOSS-Forensic-Report-Sample.pdf" download class="btn btn-sage" style="width:100%;justify-content:center;margin-top:4px">Download the sample <span class="arr">&darr;</span></a>
@@ -1004,10 +1013,7 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
         <div class="art-row"><span class="k">Agent</span><span class="v">batch-release-agent</span></div>
         <div class="art-row"><span class="k">Finding</span><span class="v" style="color:var(--red)">Electronic signature without identity verification</span></div>
         <div class="art-row"><span class="k">MGI Score</span><span class="v" style="color:var(--red)">333 &middot; Critical</span></div>
-        <div class="art-row"><span class="k">Generated</span><span class="v">2026-06-05T03:19:50Z</span></div>
         <div class="art-row"><span class="k">Algorithm</span><span class="v go">ML-DSA-44 &middot; FIPS 204</span></div>
-        <div class="art-row"><span class="k">Key ID</span><span class="v">moss_prod_2026_Q1</span></div>
-        <div class="art-row"><span class="k">SHA-256</span><span class="v">fef35761dc8fc07edc727cf1a8cb39bf&hellip;</span></div>
         <div class="art-row"><span class="k">Signature</span><span class="v">4b3869b6a2cb353771a5bf29&hellip; &middot; 2420 bytes</span></div>
         <div class="art-foot"><span class="c">Post-quantum</span><span class="c">Tamper-evident</span><span class="c">Independently verifiable</span></div>
       </div>
@@ -1017,12 +1023,13 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="n">SHIPPED</span> not slideware</div>
-  <h2 class="disp">Others assess. <span class="s">MOSS enforces.</span></h2></div>
-  <div class="caps" style="margin-top:44px;grid-template-columns:repeat(3,1fr);background:none;border:none;gap:20px">
-    <div class="cap" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:0">
-      <div style="padding:16px 20px;border-bottom:1px solid var(--line)"><div class="ch" style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="seal sl" style="background:var(--sage)"></span><h3 style="font-size:.95rem;font-stretch:108%">Capability Attenuation</h3></div><p style="color:var(--dim);font-size:13px;line-height:1.5">Permissions shrink as they delegate. Revocation pushes to all platforms in under 1 second.</p></div>
-      <div class="art" style="font-family:var(--mono);border:none">
+  <h2 class="disp">Others assess. <span class="s">MOSS enforces.</span></h2>
+  <div class="cap-art-grid" style="margin-top:44px">
+    <div class="cap-art">
+      <div class="cap-art-h"><span class="seal sl" style="background:var(--sage)"></span><h3>Capability Attenuation</h3></div>
+      <p class="cap-art-d">Permissions shrink as they delegate. Revocation pushes to all platforms in under 1 second.</p>
+      <div class="art">
+        <div class="art-bar"><span>Delegation chain</span><span style="color:var(--sage)">ATTENUATED</span></div>
         <div class="art-row" style="grid-template-columns:auto 1fr auto"><span class="k">Root</span><span class="v" style="color:var(--sage)">read write deploy</span><span class="v" style="color:var(--faint);font-size:9px">3 scopes</span></div>
         <div class="art-row" style="grid-template-columns:auto 1fr auto"><span class="k">&rarr; Agent A</span><span class="v" style="color:var(--sage)">read write</span><span class="v" style="color:var(--faint);font-size:9px">2 scopes</span></div>
         <div class="art-row" style="grid-template-columns:auto 1fr auto"><span class="k">&rarr; Agent B</span><span class="v" style="color:var(--sage)">read</span><span class="v" style="color:var(--faint);font-size:9px">1 scope</span></div>
@@ -1030,9 +1037,11 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
         <div class="art-foot"><span class="c">4 platforms</span><span class="c">ML-DSA-44</span></div>
       </div>
     </div>
-    <div class="cap" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:0">
-      <div style="padding:16px 20px;border-bottom:1px solid var(--line)"><div class="ch" style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="seal sl" style="background:var(--sage)"></span><h3 style="font-size:.95rem;font-stretch:108%">Behavioral Integrity</h3></div><p style="color:var(--dim);font-size:13px;line-height:1.5">Insider-threat model. Negative events hit 2-3x harder than positive. Trust recalibrates at machine speed.</p></div>
-      <div class="art" style="font-family:var(--mono);border:none">
+    <div class="cap-art">
+      <div class="cap-art-h"><span class="seal sl" style="background:var(--sage)"></span><h3>Behavioral Integrity</h3></div>
+      <p class="cap-art-d">Insider-threat model. Negative events hit 2-3x harder than positive. Trust recalibrates at machine speed.</p>
+      <div class="art">
+        <div class="art-bar"><span>Trust ledger</span><span style="color:var(--sage)">LIVE</span></div>
         <div class="art-row"><span class="k">Agent</span><span class="v">claims-adjudicator-v1</span></div>
         <div class="art-row" style="grid-template-columns:130px 1fr 50px"><span class="k">Trust Score</span><span class="v" style="color:var(--sage);font-weight:600">71</span><span class="v" style="color:var(--faint);font-size:9px">&darr; from 89</span></div>
         <div class="art-row" style="grid-template-columns:130px 1fr 50px"><span class="k">Event</span><span class="v" style="color:var(--red)">Anomaly: output variance</span><span class="v" style="color:var(--faint);font-size:9px">&minus;18</span></div>
@@ -1041,9 +1050,11 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
         <div class="art-foot"><span class="c">Asymmetric</span><span class="c">Real-time</span></div>
       </div>
     </div>
-    <div class="cap" style="border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:0">
-      <div style="padding:16px 20px;border-bottom:1px solid var(--line)"><div class="ch" style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span class="seal sl" style="background:var(--sage)"></span><h3 style="font-size:.95rem;font-stretch:108%">Workflow Governance</h3></div><p style="color:var(--dim);font-size:13px;line-height:1.5">Policies evaluated against the provenance graph before the action happens. Five invariant checks verify retroactively.</p></div>
-      <div class="art" style="font-family:var(--mono);border:none">
+    <div class="cap-art">
+      <div class="cap-art-h"><span class="seal sl" style="background:var(--sage)"></span><h3>Workflow Governance</h3></div>
+      <p class="cap-art-d">Policies evaluated against the provenance graph before the action happens. Five invariant checks verify retroactively.</p>
+      <div class="art">
+        <div class="art-bar"><span>Policy engine</span><span style="color:var(--red)">BLOCKED</span></div>
         <div class="art-row"><span class="k">Action</span><span class="v">cross_dept_synthesis</span></div>
         <div class="art-row" style="grid-template-columns:130px 1fr"><span class="k">Policy</span><span class="v">Provenance isolation required</span></div>
         <div class="art-row" style="grid-template-columns:130px 1fr"><span class="k">Result</span><span class="v" style="color:var(--red);font-weight:600">BLOCKED before execution</span></div>
@@ -1057,11 +1068,10 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 </div></section>
 
 <section class="prod console alt"><div class="wrap prod-in">
-  <div class="pc-copy"><span class="pl"><span class="pm console"></span>MOSS Console &middot; Runtime governance</span>
-    <h3 class="disp">Stop a rogue agent in under one second.</h3>
-    <p class="pv"><b>Policy enforced before execution, human-in-the-loop, anomaly detection, and a kill switch that fires across every platform at once.</b> Each action signed with ML-DSA-44, rolled into your MGI Score.</p>
-    <ul class="pcaps"><li><span class="seal sl"></span><span>Kill switch and policy enforcement across Google, AWS, Azure, and on-prem.</span></li><li><span class="seal sl"></span><span>Anomaly detection across 7 behavioral types. SIEM streaming to Splunk, Datadog, Elastic, QRadar.</span></li><li><span class="seal sl"></span><span>The MGI Score: one operational governance index, 200 to 900, tracked at board level.</span></li></ul>
-    <a class="plink" href="console.html">See Console <span class="arr">&rarr;</span></a></div>
+  <div class="pc-copy">
+    <h3 class="disp">Govern every action <span class="s" style="color:var(--sage)">in real-time.</span></h3>
+    <div class="cap-tags" style="margin:22px 0"><span>Kill switch</span><span>7 anomaly types</span><span>Human-in-the-loop</span><span>4 platforms</span></div>
+    <a class="plink" href="console.html" style="color:var(--sage)">See Console <span class="arr">&rarr;</span></a></div>
   <div class="pc-vis"><div class="art"><div class="art-bar"><span>MOSS Action Record</span><span style="color:var(--sage)">VERIFIED</span></div>
   <div class="art-row"><span class="k">Agent</span><span class="v">loan-underwriter-v2</span></div>
   <div class="art-row"><span class="k">Action</span><span class="v">credit_decision.approve</span></div>
@@ -1074,11 +1084,10 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 </div></section>
 
 <section class="prod trust flip"><div class="wrap prod-in">
-  <div class="pc-copy"><span class="pl"><span class="pm trust"></span>MOSS Trust &middot; Independent verification</span>
-    <h3 class="disp">Verify independently</h3>
-    <p class="pv">An agent holds a MOSS Passport or it does not. <b>Binary, never a score.</b> Four layers must all pass: identity, capability, behavior, governability. One Passport covers an agent across every platform it runs on. Verifying an agent is always free.</p>
-    <ul class="pcaps"><li><span class="seal sl" style="background:var(--accent)"></span><span>Cross-platform and neutral. MOSS verifies agents across platforms no single hyperscaler can reach.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>Offline-verifiable evidence export. An auditor confirms provenance without calling our servers.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>95+ regulatory frameworks across 90+ jurisdictions, mapped per Passport.</span></li></ul>
-    <a class="plink" href="trust.html">Verify an agent <span class="arr">&rarr;</span></a></div>
+  <div class="pc-copy">
+    <h3 class="disp">Binary. <span class="s" style="color:var(--accent)">Never a score.</span></h3>
+    <div class="cap-tags" style="margin:22px 0"><span>4 layers</span><span>Cross-platform</span><span>Offline-verifiable</span><span>Always free</span></div>
+    <a class="plink" href="trust.html" style="color:var(--accent)">Verify an agent <span class="arr">&rarr;</span></a></div>
   <div class="pc-vis"><div class="art"><div class="art-bar"><span>MOSS Passport &middot; claims-adjudicator-v1</span><span style="color:var(--accent)">ISSUED</span></div>
   <div class="pl-row"><span class="l">Identity</span><span class="v"><span class="seal sl"></span>VERIFIED</span></div>
   <div class="pl-row"><span class="l">Capability</span><span class="v"><span class="seal sl"></span>VERIFIED</span></div>
@@ -1090,12 +1099,11 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
 </div></section>
 
 <section class="prod pqc alt"><div class="wrap prod-in">
-  <div class="pc-copy"><span class="pl"><span class="pm pqc"></span>MOSS PQC Migration &middot; Quantum readiness</span>
-    <h3 class="disp">Make your company quantum safe</h3>
-    <p class="pv">Your code is quantum-vulnerable. <b>MOSS finds every legacy line and migrates it to ML-DSA-44.</b> Most scanners find the problem and leave it on your desk. MOSS opens the pull request that fixes it.</p>
-    <ul class="pcaps"><li><span class="seal sl" style="background:var(--accent)"></span><span>59 detection rules across Python, JavaScript, and Java. RSA, ECDSA, DSA, JWT, TLS, X.509.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>A complete crypto inventory: severity, file, and line for every finding.</span></li><li><span class="seal sl" style="background:var(--accent)"></span><span>Auto-fixable findings ship as a ready-to-review pull request to ML-DSA-44.</span></li></ul>
+  <div class="pc-copy">
+    <h3 class="disp">Make your company <span class="s" style="color:var(--accent)">quantum safe.</span></h3>
+    <div class="cap-tags" style="margin:22px 0"><span>59 detection rules</span><span>Python &middot; JS &middot; Java</span><span>Auto-fix PRs</span><span>Free scan</span></div>
     <div class="pc-free"><span class="fl">FREE SCAN</span><br>Scan your code. No account required.</div>
-    <a class="plink" href="pqc.html">Scan a repo <span class="arr">&rarr;</span></a></div>
+    <a class="plink" href="pqc.html" style="color:var(--accent)">Scan a repo <span class="arr">&rarr;</span></a></div>
   <div class="pc-vis"><div class="art"><div class="art-bar"><span>northwind-bank/payment-gateway &middot; jwt.py:42</span><span style="color:var(--accent)">RSA &rarr; ML-DSA-44</span></div>
   <div class="dl ctx"><span class="ln">40</span><span class="c">def issue_token(claims):</span></div>
   <div class="dl rem"><span class="ln sgn">−</span><span class="c">  key = rsa.generate_private_key(2048)</span></div>
@@ -1112,15 +1120,13 @@ body.theme-pqc .page-hero{background:radial-gradient(120% 80% at 78% 0%,rgba(148
   <div class="cband"><div class="clab">Regulatory frameworks</div><div class="tags"><span>EU AI Act</span><span>DORA</span><span>NIST AI RMF</span><span>ISO 42001</span><span>GDPR Art. 22</span><span>HIPAA</span><span>SOC 2</span><span>FCA</span><span>SR 11-7</span><span>FIPS 204</span></div></div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><div class="eyebrow"><span class="n">MOSS AI REGISTRY</span> free public utility</div>
   <h2 class="disp">788 AI companies. <span class="s">Enterprises are checking.</span></h2>
-  <div class="hero-cta"><a class="btn btn-sage" href="https://airegistry.mosscomputing.com">Open the registry <span class="arr">&rarr;</span></a></div></div>
+  <div class="hero-cta" style="margin-top:24px"><a class="btn btn-sage" href="https://airegistry.mosscomputing.com">Open the registry <span class="arr">&rarr;</span></a></div>
 </div></section>
 <section class="sec qband"><div class="wrap">
   <div>
-    <div class="eyebrow"><span class="n">The second clock</span></div>
-    <h2 class="disp">Your cryptography has an expiration date.</h2>
-    <p class="sd">Anything signed or encrypted with RSA or elliptic-curve today is already captured. The day a quantum computer arrives, it breaks. MOSS finds the vulnerable cryptography in your stack and moves it to the NIST post-quantum standard.</p>
+    <h2 class="disp">Your cryptography has <span class="s" style="color:var(--accent)">an expiration date.</span></h2>
+    <div class="cap-tags" style="margin:22px 0"><span>RSA</span><span>ECDSA</span><span>DSA</span><span>JWT</span><span>TLS</span><span>X.509</span></div>
     <div class="hero-cta q-cta"><a class="btn btn-pqc" href="https://pqc.mosscomputing.com">Find your quantum exposure <span class="arr">&rarr;</span></a></div>
   </div>
   <div class="qclock">
