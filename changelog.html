@@ -61,8 +61,21 @@
   <p class="cl-sub">Real infrastructure. Real cryptography. Real production. Not slideware, not roadmaps, not promises. Here is what is running.</p>
 
   <div class="cl-entry">
+    <div class="cl-date">July 1, 2026</div>
+    <h2>M22: Behavioral Boundaries &amp; Integrity Scoring <span class="cl-status shipped">shipped</span></h2>
+    <p>The third governance layer. <b>Would the principal want the agent to do X in this context, and can we still trust this agent?</b> Behavioral boundary enforcement and dynamic trust calibration wired into every envelope creation.</p>
+    <ul>
+      <li><b>Behavioral boundary enforcement</b>: 4 checks (capability, constraint, fingerprint, principal-intent) resolving to WITHIN_BOUNDS / BOUNDARY_UNCLEAR / OUT_OF_BOUNDS</li>
+      <li><b>Dynamic trust calibration</b>: per-agent 0-100 integrity score, asymmetric recency-weighted impacts, gaming detection, automatic probation/suspension</li>
+      <li><b>M20 integration</b>: behavioral-integrity gate runs after policy gate, before token consumption. Suspended agents blocked, below-threshold forces escalation, out-of-bounds blocks</li>
+      <li><b>Security fix</b>: cross-org vulnerability patched (agents table has no RLS, explicit org_id filters added)</li>
+      <li>552 tests passing, 62 validation assertions, deployed to production</li>
+    </ul>
+  </div>
+
+  <div class="cl-entry">
     <div class="cl-date">June 30, 2026</div>
-    <h2>M21: Workflow Governance <span class="cl-status progress">in progress</span></h2>
+    <h2>M21: Workflow Governance <span class="cl-status shipped">shipped</span></h2>
     <p>Workflow-level authorization policies evaluated against the execution-envelope dependency graph. Policies enforced <b>before the action happens</b>, not after.</p>
     <ul>
       <li><b>Policy engine</b> with ALLOW/DENY/ESCALATE decisions, priority ordering, fail_mode handling, structured rule evaluation</li>
